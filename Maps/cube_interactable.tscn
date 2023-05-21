@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://credcfqulvxk7"]
+
+[ext_resource type="Script" path="res://Maps/cube_interactable.gd" id="2_kqgx7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_frh66"]
+
+[node name="Cube_interactable"]
+script = ExtResource("2_kqgx7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+mesh = SubResource("BoxMesh_frh66")
