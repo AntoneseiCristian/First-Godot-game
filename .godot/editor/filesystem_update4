@@ -1,3 +1,4 @@
+res://Maps/Level1.tscn
 res://Maps/door.tscn
-res://Level1.tscn
 res://Player/Player.tscn
+res://Maps/interract_generic.tscn
