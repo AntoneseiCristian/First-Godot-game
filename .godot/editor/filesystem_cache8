@@ -9,18 +9,21 @@ THIRDPARTY.md::TextFile::-1::1684847991::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1684847991
 ::res://addons/godot-git-plugin/macos/::1684847992
 ::res://addons/godot-git-plugin/win64/::1684847992
-::res://Maps/::1684848283
-door.tscn::PackedScene::8048836711129985439::1684848283::0::1::::<><>::uid://cnmykfyst2n03
-interract_generic.tscn::PackedScene::7862819072991281610::1684848283::0::1::::<><>::
-Level1.tscn::PackedScene::665282958012600035::1684848283::0::1::::<><>::uid://c5u26pjvbm5hi
+::res://Maps/::1684853510
+door.tscn::PackedScene::8048836711129985439::1684852633::0::1::::<><>::uid://cnmykfyst2n03
+interract_generic.tscn::PackedScene::7862819072991281610::1684852633::0::1::::<><>::res://Object nodes/interact_generic.gd
+Level1.tscn::PackedScene::665282958012600035::1684852633::0::1::::<><>::uid://c5u26pjvbm5hi<>uid://bero84or4iii5<>uid://cnmykfyst2n03<>uid://dka2qmpmugwu1<>uid://beqo0gou675jc
+cube_interactable.tscn::PackedScene::2701101122775330204::1684852633::0::1::::<><>::uid://dka2qmpmugwu1<>res://Maps/cube_interactable.gd
+cube_interactable.gd::GDScript::-1::1684852163::0::1::::<>Interactable<>::
+Door1.tscn::PackedScene::3086055184375155673::1684853510::0::1::::<><>::uid://dka2qmpmugwu1
 ::res://Object nodes/::1684847991
 cube_interactable.gd::GDScript::-1::1684847991::0::1::::<>Interactable<>::
 interact_generic.gd::GDScript::-1::1684847991::0::1::::Interactable<>Area3D<>::
 Level1.gd::GDScript::-1::1684847991::0::1::::<>Node<>::
-::res://Player/::1684848283
+::res://Player/::1684852633
 Player.gd::GDScript::-1::1684847991::0::1::::<>CharacterBody3D<>::
-Player.tscn::PackedScene::6921489752733594174::1684848283::0::1::::<><>::res://Player/Player.gd
-::res://Props 3D/::1684848684
+Player.tscn::PackedScene::6921489752733594174::1684852633::0::1::::<><>::res://Player/Player.gd
+::res://Props 3D/::1684848855
 Door.glb::PackedScene::5711544234031146346::1684847991::1684847991::1::::<><>::
 Scaun.glb::PackedScene::2703180994777734782::1684848849::1684848855::1::::<><>::uid://l2kd2rwxlsww<>uid://byp85sp3br2f4<>uid://ciwscnppw1qbl
 Scaun_Image_1.png::CompressedTexture2D::5380865611224971709::1684847991::1684847991::1::::<><>::

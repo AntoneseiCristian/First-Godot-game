@@ -1,8 +1,9 @@
+AnimationPlayer
+CollisionShape3D
+StaticBody3D
 Interactable
 MeshInstance3D
 OmniLight3D
-StaticBody3D
-CollisionShape3D
 Node
 Area3D
 WorldEnvironment

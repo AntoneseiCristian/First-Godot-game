@@ -4,3 +4,5 @@ res://Player/Player.tscn
 res://Maps/interract_generic.tscn
 res://Maps/cube_interactable.tscn
 res://Maps/cube_interactable.gd
+res://Maps/Door1.tscn
+res://Scripts/Door1.gd
