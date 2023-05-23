@@ -1,7 +1,8 @@
+Interactable
+MeshInstance3D
 OmniLight3D
 StaticBody3D
 CollisionShape3D
-MeshInstance3D
 Node
 Area3D
 WorldEnvironment
