@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Object nodes/interact_generic.gd" id="1_v45oo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4t6fa"]
+size = Vector3(0.4228, 2.25226, 1.31239)
 
 [node name="Interract_generic" type="Area3D" groups=["Interactable"]]
 script = ExtResource("1_v45oo")
