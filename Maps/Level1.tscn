@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://jqjd31bsnrlb"]
+[gd_scene load_steps=10 format=3 uid="uid://jqjd31bsnrlb"]
 
 [ext_resource type="PackedScene" uid="uid://c5u26pjvbm5hi" path="res://Player/Player.tscn" id="1_bx01k"]
+[ext_resource type="PackedScene" uid="uid://bero84or4iii5" path="res://Props 3D/Scaun.glb" id="2_mceti"]
+[ext_resource type="PackedScene" uid="uid://cnmykfyst2n03" path="res://Props 3D/Door.glb" id="3_xh4ye"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eq78w"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,6 +20,8 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_ewxbn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1mxc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkh0c"]
 
 [node name="Node" type="Node"]
 
@@ -38,7 +42,51 @@ mesh = SubResource("BoxMesh_ewxbn")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_r1mxc")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
+transform = Transform3D(8.25375, 0, 0, 0, 0.120917, 0, 0, 0, 11.4333, 0, 0, 11.5021)
+mesh = SubResource("BoxMesh_ewxbn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D"]
+shape = SubResource("BoxShape3D_r1mxc")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
+transform = Transform3D(8.25375, 0, 0, 0, -5.28545e-09, 7.9264, 0, -0.120917, -3.46474e-07, -0.0105407, 4.02733, -5.62464)
+mesh = SubResource("BoxMesh_ewxbn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D"]
+shape = SubResource("BoxShape3D_r1mxc")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
+transform = Transform3D(8.25375, 0, 0, 0, -5.28545e-09, 7.9264, 0, -0.120917, -3.46474e-07, -4.65843, 4.02733, 5.61959)
+mesh = SubResource("BoxMesh_ewxbn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D"]
+shape = SubResource("BoxShape3D_r1mxc")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
+transform = Transform3D(8.25375, 0, 0, 0, -5.28545e-09, 7.9264, 0, -0.120917, -3.46474e-07, -0.895377, 6.1832, 5.37832)
+mesh = SubResource("BoxMesh_ewxbn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D9/StaticBody3D"]
+shape = SubResource("BoxShape3D_r1mxc")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
+transform = Transform3D(8.25375, 0, 0, 0, -5.28545e-09, 7.9264, 0, -0.120917, -3.46474e-07, 4.78959, 3.96671, 5.74518)
+mesh = SubResource("BoxMesh_ewxbn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D8/StaticBody3D"]
 shape = SubResource("BoxShape3D_r1mxc")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
@@ -48,7 +96,6 @@ mesh = SubResource("BoxMesh_ewxbn")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_r1mxc")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
@@ -58,7 +105,6 @@ mesh = SubResource("BoxMesh_ewxbn")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_r1mxc")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
@@ -68,5 +114,19 @@ mesh = SubResource("BoxMesh_ewxbn")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_r1mxc")
+
+[node name="Scaun" parent="." instance=ExtResource("2_mceti")]
+transform = Transform3D(0.737048, -0.00578185, -0.675816, 0.00771944, 0.99997, -0.000136246, 0.675797, -0.00511649, 0.73707, -3, 0.832832, -4)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Scaun"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaun/StaticBody3D"]
+shape = SubResource("BoxShape3D_nkh0c")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0195143, 3.86059, -3.31186)
+omni_range = 8.863
+
+[node name="Door" parent="." instance=ExtResource("3_xh4ye")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0778352, 0.0604585, 5.61048)

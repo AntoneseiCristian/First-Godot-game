@@ -1,35 +1,35 @@
 2a60927148abd1d33b818b535e306557
-::res://::1684698506
-icon.svg::CompressedTexture2D::2792527524694769030::1684408569::1684694977::1::::<><>::
-::res://addons/::1684694283
-::res://addons/godot-git-plugin/::1684694283
-git_plugin.gdextension::GDExtension::-1::1684694283::0::1::::<><>::
-plugin.cfg::TextFile::-1::1684694283::0::1::::<><>::
-THIRDPARTY.md::TextFile::-1::1684694283::0::1::::<><>::
-::res://addons/godot-git-plugin/linux/::1684694283
-::res://addons/godot-git-plugin/macos/::1684694283
-::res://addons/godot-git-plugin/win64/::1684694283
-::res://Maps/::1684698435
-door.tscn::PackedScene::8048836711129985439::1684698435::0::1::::<><>::uid://cnmykfyst2n03
-interract_generic.tscn::PackedScene::7862819072991281610::1684698435::0::1::::<><>::
-Level1.tscn::PackedScene::665282958012600035::1684698435::0::1::::<><>::
-::res://Object nodes/::1684695331
-cube_interactable.gd::GDScript::-1::1684573185::0::1::::<>Interactable<>::
-interact_generic.gd::GDScript::-1::1684571629::0::1::::Interactable<>Area3D<>::
-Level1.gd::GDScript::-1::1684498945::0::1::::<>Node<>::
-::res://Player/::1684698435
-Player.gd::GDScript::-1::1684581311::0::1::::<>CharacterBody3D<>::
-Player.tscn::PackedScene::6921489752733594174::1684698435::0::1::::<><>::res://Player/Player.gd
-::res://Props 3D/::1684695360
-Door.glb::PackedScene::5711544234031146346::1684693740::1684695360::1::::<><>::
-Scaun.glb::PackedScene::2703180994777734782::1684582681::1684695360::1::::<><>::uid://l2kd2rwxlsww<>uid://byp85sp3br2f4<>uid://ciwscnppw1qbl
-Scaun_Image_1.png::CompressedTexture2D::5380865611224971709::1684694979::1684695360::1::::<><>::
-Scaun_Image_2-Image_0.png::CompressedTexture2D::4103976801761811723::1684694981::1684695360::1::::<><>::
-Scaun_Image_3.png::CompressedTexture2D::828429452110247442::1684694984::1684695360::1::::<><>::
-::res://Sounds/::1684694978
-concrete-footsteps-6752 render 001.wav::AudioStreamWAV::4239190723649099728::1684513919::1684694978::1::::<><>::
-untitled.mp3::AudioStreamMP3::6680170231171237173::1684514289::1684694977::1::::<><>::
-::res://Textures/::1684694978
-Scaun_Image_1.png::CompressedTexture2D::359734599970591785::1684582687::1684694978::1::::<><>::
-Scaun_Image_2-Image_0.png::CompressedTexture2D::8377853587896254889::1684582690::1684694978::1::::<><>::
-Scaun_Image_3.png::CompressedTexture2D::2415091946190305750::1684582694::1684694978::1::::<><>::
+::res://::1684848242
+icon.svg::CompressedTexture2D::2792527524694769030::1684847992::1684847992::1::::<><>::
+::res://addons/::1684847991
+::res://addons/godot-git-plugin/::1684847992
+git_plugin.gdextension::GDExtension::-1::1684847991::0::1::::<><>::
+plugin.cfg::TextFile::-1::1684847992::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1684847991::0::1::::<><>::
+::res://addons/godot-git-plugin/linux/::1684847991
+::res://addons/godot-git-plugin/macos/::1684847992
+::res://addons/godot-git-plugin/win64/::1684847992
+::res://Maps/::1684848283
+door.tscn::PackedScene::8048836711129985439::1684848283::0::1::::<><>::uid://cnmykfyst2n03
+interract_generic.tscn::PackedScene::7862819072991281610::1684848283::0::1::::<><>::
+Level1.tscn::PackedScene::665282958012600035::1684848283::0::1::::<><>::uid://c5u26pjvbm5hi
+::res://Object nodes/::1684847991
+cube_interactable.gd::GDScript::-1::1684847991::0::1::::<>Interactable<>::
+interact_generic.gd::GDScript::-1::1684847991::0::1::::Interactable<>Area3D<>::
+Level1.gd::GDScript::-1::1684847991::0::1::::<>Node<>::
+::res://Player/::1684848283
+Player.gd::GDScript::-1::1684847991::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::6921489752733594174::1684848283::0::1::::<><>::res://Player/Player.gd
+::res://Props 3D/::1684848684
+Door.glb::PackedScene::5711544234031146346::1684847991::1684847991::1::::<><>::
+Scaun.glb::PackedScene::2703180994777734782::1684848849::1684848855::1::::<><>::uid://l2kd2rwxlsww<>uid://byp85sp3br2f4<>uid://ciwscnppw1qbl
+Scaun_Image_1.png::CompressedTexture2D::5380865611224971709::1684847991::1684847991::1::::<><>::
+Scaun_Image_2-Image_0.png::CompressedTexture2D::4103976801761811723::1684847991::1684847991::1::::<><>::
+Scaun_Image_3.png::CompressedTexture2D::828429452110247442::1684847991::1684847991::1::::<><>::
+::res://Sounds/::1684847991
+concrete-footsteps-6752 render 001.wav::AudioStreamWAV::4239190723649099728::1684847991::1684847991::1::::<><>::
+untitled.mp3::AudioStreamMP3::6680170231171237173::1684847991::1684847991::1::::<><>::
+::res://Textures/::1684847991
+Scaun_Image_1.png::CompressedTexture2D::359734599970591785::1684847991::1684847991::1::::<><>::
+Scaun_Image_2-Image_0.png::CompressedTexture2D::8377853587896254889::1684847991::1684847991::1::::<><>::
+Scaun_Image_3.png::CompressedTexture2D::2415091946190305750::1684847991::1684847991::1::::<><>::
