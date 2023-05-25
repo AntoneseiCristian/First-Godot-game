@@ -74,7 +74,7 @@ mesh = SubResource("BoxMesh_ewxbn")
 shape = SubResource("BoxShape3D_r1mxc")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="." groups=["WoodTerrain"]]
-transform = Transform3D(8.25375, 0, 0, 0, -5.28545e-09, 7.9264, 0, -0.120917, -3.46474e-07, -0.895377, 6.1832, 5.37832)
+transform = Transform3D(8.25375, 0, 0, 0, -5.28545e-09, 7.9264, 0, -0.120917, -3.46474e-07, -0.895377, 6.1832, 5.46575)
 mesh = SubResource("BoxMesh_ewxbn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9"]
@@ -137,4 +137,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26528, 1.46735, 0.805321)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25506, 1.05971, -0.0376496)
 
 [node name="Door" parent="." instance=ExtResource("5_us7bj")]
-transform = Transform3D(-0.0760926, 0, -0.997101, 0, 1, 0, 0.997101, 0, -0.0760926, 0.0339859, 0.0315366, 5.7854)
+transform = Transform3D(0.00372285, -0.00115868, 0.999992, 0.00123305, 0.999999, 0.00115409, -0.999992, 0.00122874, 0.00372431, 0.0339859, 0.0315366, 5.7854)
