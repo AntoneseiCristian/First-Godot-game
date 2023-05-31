@@ -1,6 +1,3 @@
-res://Maps/Level1.tscn
 res://Player/Player.tscn
-res://Player/Health.gd
-res://Player/Player.gd
-res://Player/WeaponManager.gd
+res://Maps/Level1.tscn
 res://shotgun.tscn
