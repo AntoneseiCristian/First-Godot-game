@@ -1,7 +1,6 @@
-res://Scripts/Door1.gd
-res://Maps/Door1.tscn
-res://Maps/door.tscn
 res://Maps/Level1.tscn
 res://Player/Player.tscn
-res://Maps/interract_generic.tscn
-res://Maps/cube_interactable.tscn
+res://Player/Health.gd
+res://Player/Player.gd
+res://Player/WeaponManager.gd
+res://shotgun.tscn

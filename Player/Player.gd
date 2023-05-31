@@ -5,7 +5,26 @@ extends CharacterBody3D
 @onready var floorcast = $FloorDetectRayCast3D
 @onready var player_footstep_sound = $PlayerFootstepSound
 @onready var interact_raycast = $Camera3D/InteractRaycast
+@onready var interact_label = $InteractLabel
+@onready var crosshair = $Control/Crosshair
+@onready var health = $Health
+@onready var weapon_manager = $Camera3D/WeaponManager
 
+var hotkeys = {
+	KEY_1 : 0,
+	KEY_2 : 1,
+	KEY_3 : 2,
+	KEY_4 : 3,
+	KEY_5 : 4,
+	KEY_6 : 5,
+	KEY_7 : 6,
+	KEY_8 : 7,
+	KEY_9 : 8,
+	KEY_0 : 9,
+}
+
+
+var dead = false
 var mouse_sens := 0.15
 var direction = Vector3.ZERO
 var speed := 3 
@@ -23,6 +42,8 @@ var camUpDown := 1 #0.5
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$MeshInstance3D.visible = false
+	health._init()
+	if dead: return
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -38,7 +59,16 @@ func _input(event):
 		var interacted = interact_raycast.get_collider()
 		if interacted != null and interacted.is_in_group("Interactable") and interacted.has_method("action_use"):
 			interacted.action_use()
-			
+	
+	if Input.is_action_just_pressed("slot1"):
+		weapon_manager.switch_to_weapon_slot(0)
+	if Input.is_action_just_pressed("slot2"):
+		weapon_manager.switch_to_weapon_slot(1)
+	if Input.is_action_just_pressed("slot3"):
+		weapon_manager.switch_to_weapon_slot(2)
+	if Input.is_action_just_pressed("slot4"):
+		weapon_manager.switch_to_weapon_slot(3)
+
 func _process(delta):
 
 	_physics_miscare(delta)
@@ -49,7 +79,21 @@ func _process(delta):
 			var terraingroup = walkingTerrain.get_groups()[0]
 			#print(terraingroup)
 			_processGroundSounds(terraingroup)
-	
+	_label_dispaly()
+			
+func _label_dispaly():
+	if interact_raycast.is_colliding():
+		if is_instance_valid(interact_raycast.get_collider()):
+			if interact_raycast.get_collider().is_in_group("Interactable"):
+				interact_label.text = interact_raycast.get_collider().type
+				interact_label.visible = true
+				crosshair.hide()
+			else:
+				interact_label.visible = false
+				crosshair.show()
+	else:
+		interact_label.visible = false
+		crosshair.show()
 
 
 func _processGroundSounds(group: String):
@@ -107,7 +151,8 @@ func _procesare_miscare(delta):
 		get_tree().quit()
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			velocity.y = jump_  # Apply jump force
+			velocity.y = jump_ 
+			hurt(50) # Apply jump force
 		else:
 			velocity.y = 0  # Reset vertical velocity when on the floor and not jumping
 	else:
@@ -115,3 +160,12 @@ func _procesare_miscare(delta):
 	
 	move_and_slide() 	 # Move the character and slide on slopes
 
+func hurt(damage):
+	health.hurt(damage)
+	
+func heal(amount):
+	health.heal(amount)
+
+func kill():
+	dead = true
+	

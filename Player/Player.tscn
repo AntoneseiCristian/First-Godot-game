@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5u26pjvbm5hi"]
+[gd_scene load_steps=12 format=3 uid="uid://c5u26pjvbm5hi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7fv8r"]
+[ext_resource type="Texture2D" uid="uid://dxvkr1ki4m47q" path="res://Props 2D/crosshair.png" id="2_ls1wl"]
+[ext_resource type="PackedScene" uid="uid://cy2bukoyvh4i2" path="res://Props 3D/Weapons/machete.glb" id="3_gxlnd"]
+[ext_resource type="Script" path="res://Player/Health.gd" id="3_n75f1"]
+[ext_resource type="PackedScene" uid="uid://bli31cgquj22m" path="res://Props 3D/Weapons/machinegun.glb" id="4_iycox"]
+[ext_resource type="Script" path="res://Player/WeaponManager.gd" id="4_puvee"]
+[ext_resource type="PackedScene" path="res://Props 3D/Weapons/rocketlauncher.glb" id="5_3ndix"]
+[ext_resource type="PackedScene" uid="uid://bl2s0o5gvd2ky" path="res://shotgun.tscn" id="6_i6cax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gakgu"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5gxqe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sv814"]
+resource_local_to_scene = true
+font_size = 32
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -14,17 +25,79 @@ script = ExtResource("1_7fv8r")
 shape = SubResource("CapsuleShape3D_gakgu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553477, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553477, -0.0812874)
 current = true
+fov = 100.0
 
 [node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -5)
 collide_with_areas = true
 
+[node name="WeaponManager" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0101595, -0.354926)
+script = ExtResource("4_puvee")
+
+[node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]
+
+[node name="machete" parent="Camera3D/WeaponManager/Weapons" instance=ExtResource("3_gxlnd")]
+transform = Transform3D(0.266106, 0.0972741, 0.0986162, -0.127077, 0.256433, 0.0899625, -0.0551249, -0.121572, 0.268666, -0.0498583, -0.502446, 0.119794)
+
+[node name="machinegun" parent="Camera3D/WeaponManager/Weapons" instance=ExtResource("4_iycox")]
+transform = Transform3D(0.253095, 0.0586083, 0.106469, -0.0553498, 0.274556, -0.0195602, -0.108199, -0.00335673, 0.259054, 0.225669, -0.0689992, -0.692435)
+visible = false
+
+[node name="rocketlauncher" parent="Camera3D/WeaponManager/Weapons" instance=ExtResource("5_3ndix")]
+transform = Transform3D(0.250801, 0.106655, 0.125393, -0.097049, 0.280379, -0.0443716, -0.132967, -0.00346955, 0.268901, 0.187698, -0.247605, -0.526507)
+visible = false
+
+[node name="gun" parent="Camera3D/WeaponManager/Weapons" instance=ExtResource("6_i6cax")]
+transform = Transform3D(0.464509, -0.00303789, 0.184992, 0.0623106, 0.473296, -0.148687, -0.174209, 0.161187, 0.440079, 0.35, -0.3, 0)
+visible = false
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_5gxqe")
 
 [node name="FloorDetectRayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.508133, 0)
 
 [node name="PlayerFootstepSound" type="AudioStreamPlayer" parent="."]
+
+[node name="InteractLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interact"
+label_settings = SubResource("LabelSettings_sv814")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Sprite2D" parent="Control"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ls1wl")
+
+[node name="Health" type="Node3D" parent="."]
+script = ExtResource("3_n75f1")

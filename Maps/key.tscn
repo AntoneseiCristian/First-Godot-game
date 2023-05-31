@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://y6ve8g1upu3x"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rucbc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x0ihg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bv16x"]
+size = Vector3(1, 1.92433, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oeuet"]
+size = Vector3(1, 2.10478, 1.17608)
+
+[node name="Key" type="Area3D" groups=["Interactable"]]
+
+[node name="Key" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_rucbc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Key"]
+mesh = SubResource("CapsuleMesh_x0ihg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Key"]
+shape = SubResource("BoxShape3D_bv16x")
+disabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_oeuet")
