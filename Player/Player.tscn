@@ -1,13 +1,77 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5u26pjvbm5hi"]
+[gd_scene load_steps=13 format=3 uid="uid://c5u26pjvbm5hi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7fv8r"]
 [ext_resource type="Texture2D" uid="uid://dxvkr1ki4m47q" path="res://Props 2D/crosshair.png" id="2_ls1wl"]
 [ext_resource type="Script" path="res://Player/Health.gd" id="3_n75f1"]
 [ext_resource type="Script" path="res://Player/WeaponManager.gd" id="4_puvee"]
-[ext_resource type="PackedScene" uid="uid://c80sut7h6e034" path="res://Props 3D/Weapons/Blader/blader-col.glb" id="6_5g3yl"]
 [ext_resource type="PackedScene" uid="uid://bl2s0o5gvd2ky" path="res://shotgun.tscn" id="6_i6cax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gakgu"]
+
+[sub_resource type="Animation" id="Animation_ix8s4"]
+resource_name = "idle"
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_u00he"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.120661, -0.0130553, -0.299482), Vector3(0.120661, -0.0130553, -0.299482), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.214676, -0.00872665, 0.0453786), Vector3(0.213109, -0.00865606, 0.0455623), Vector3(-0.214676, -0.00872665, 0.0453786)]
+}
+
+[sub_resource type="Animation" id="Animation_aotag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.213109, -0.00865606, 0.0455623)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0xth"]
+_data = {
+"RESET": SubResource("Animation_aotag"),
+"attack": SubResource("Animation_u00he"),
+"idle": SubResource("Animation_ix8s4")
+}
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5gxqe"]
 
@@ -23,9 +87,9 @@ script = ExtResource("1_7fv8r")
 shape = SubResource("CapsuleShape3D_gakgu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553477, -0.0812874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.553477, 0.478215)
 current = true
-fov = 100.0
+fov = 70.0
 
 [node name="InteractRaycast" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -5)
@@ -37,9 +101,20 @@ script = ExtResource("4_puvee")
 
 [node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]
 
-[node name="gun" parent="Camera3D/WeaponManager/Weapons" instance=ExtResource("6_i6cax")]
-transform = Transform3D(0.464509, -0.00303789, 0.184992, 0.0623106, 0.473296, -0.148687, -0.174209, 0.161187, 0.440079, 0.35, -0.3, 0)
-visible = false
+[node name="Gun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
+transform = Transform3D(0.195056, -0.0123485, 0.0424351, 0.0258523, 0.187633, -0.0642314, -0.0358453, 0.0681288, 0.18459, 0.0702229, -0.162919, -0.0234192)
+
+[node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Gun"]
+transform = Transform3D(1, 1.49012e-08, -1.49012e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="gun" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics" instance=ExtResource("6_i6cax")]
+transform = Transform3D(0.998842, -0.0473737, -0.00846014, 0.0445162, 0.976364, -0.211499, 0.0182797, 0.210878, 0.977341, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_a0xth")
+}
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
@@ -88,6 +163,3 @@ texture = ExtResource("2_ls1wl")
 
 [node name="Health" type="Node3D" parent="."]
 script = ExtResource("3_n75f1")
-
-[node name="blader-col" parent="." instance=ExtResource("6_5g3yl")]
-transform = Transform3D(-0.958226, -0.278019, -0.0671446, -0.25419, 0.720193, 0.64553, -0.131113, 0.635631, -0.760778, 0.143884, 0.157879, -0.974137)

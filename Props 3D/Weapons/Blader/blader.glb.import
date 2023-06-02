@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c80sut7h6e034"
-path="res://.godot/imported/blader-col.glb-5e97a4bd89ae25c6c544c7e36c6dded6.scn"
+path="res://.godot/imported/blader.glb-fd257c18635fe1e5e55cd7ea680f02cb.scn"
 
 [deps]
 
-source_file="res://Props 3D/Weapons/Blader/blader-col.glb"
-dest_files=["res://.godot/imported/blader-col.glb-5e97a4bd89ae25c6c544c7e36c6dded6.scn"]
+source_file="res://Props 3D/Weapons/Blader/blader.glb"
+dest_files=["res://.godot/imported/blader.glb-fd257c18635fe1e5e55cd7ea680f02cb.scn"]
 
 [params]
 

@@ -1,6 +1,7 @@
+AnimationPlayer
+Node3D
 CollisionShape3D
 MeshInstance3D
-Node3D
 NavigationRegion3D
 Node
 StaticBody3D
@@ -13,7 +14,6 @@ CollisionPolygon3D
 Polygon2D
 Sprite2D
 AudioStreamPlayer3D
-AnimationPlayer
 Interactable
 OmniLight3D
 WorldEnvironment
