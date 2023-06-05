@@ -1,4 +1,3 @@
 res://Maps/Level1.tscn
 res://Player/Player.tscn
-res://shotgun.tscn
-res://blader_col.tscn
+res://bullet_hit_effect.tscn

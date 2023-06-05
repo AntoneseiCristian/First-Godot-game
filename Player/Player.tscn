@@ -8,9 +8,32 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gakgu"]
 
-[sub_resource type="Animation" id="Animation_ix8s4"]
-resource_name = "idle"
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_aotag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.213109, -0.00865606, 0.0455623)]
+}
 
 [sub_resource type="Animation" id="Animation_u00he"]
 resource_name = "attack"
@@ -39,32 +62,9 @@ tracks/1/keys = {
 "values": [Vector3(-0.214676, -0.00872665, 0.0453786), Vector3(0.213109, -0.00865606, 0.0455623), Vector3(-0.214676, -0.00872665, 0.0453786)]
 }
 
-[sub_resource type="Animation" id="Animation_aotag"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("gun:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("gun:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.213109, -0.00865606, 0.0455623)]
-}
+[sub_resource type="Animation" id="Animation_ix8s4"]
+resource_name = "idle"
+loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a0xth"]
 _data = {
@@ -108,7 +108,7 @@ transform = Transform3D(0.195056, -0.0123485, 0.0424351, 0.0258523, 0.187633, -0
 transform = Transform3D(1, 1.49012e-08, -1.49012e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="gun" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics" instance=ExtResource("6_i6cax")]
-transform = Transform3D(0.998842, -0.0473737, -0.00846014, 0.0445162, 0.976364, -0.211499, 0.0182797, 0.210878, 0.977341, 0, 0, 0)
+transform = Transform3D(0.998842, -0.0473737, -0.00846013, 0.0445162, 0.976364, -0.211499, 0.0182797, 0.210878, 0.977341, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics"]
 autoplay = "idle"

@@ -1,9 +1,10 @@
 2a60927148abd1d33b818b535e306557
-::res://::1685563959
+::res://::1685947313
 blader_col.tscn::PackedScene::7398334785988586266::1685563959::0::1::::<><>::
 icon.svg::CompressedTexture2D::2792527524694769030::1684847992::1684847992::1::::<><>::
+bullet_hit_effect.tscn::PackedScene::8359465607478769951::1685947313::0::1::::<><>::
 shotgun.tscn::PackedScene::3215374495760349568::1685563632::0::1::::<><>::uid://vm3bp4mhnlmb
-::res://Maps/::1685563785
+::res://Maps/::1685877250
 ceiling_not_broken.tscn::PackedScene::7048586911131467573::1685388417::0::1::::<><>::uid://c4q58cdwujdwt
 cube_interactable.gd::GDScript::-1::1684852163::0::1::::<>Interactable<>::
 cube_interactable.tscn::PackedScene::2701101122775330204::1685382612::0::1::::<><>::uid://dka2qmpmugwu1<>res://Maps/cube_interactable.gd
@@ -11,20 +12,21 @@ Door1.tscn::PackedScene::3086055184375155673::1685388417::0::1::::<><>::uid://dk
 door.tscn::PackedScene::6181790591584454578::1685388417::0::1::::<><>::uid://cnmykfyst2n03
 interract_generic.tscn::PackedScene::7862819072991281610::1685388416::0::1::::<><>::res://Object nodes/interact_generic.gd
 key.tscn::PackedScene::1749811901460388247::1685388417::0::1::::<><>::
-Level1.tscn::PackedScene::665282958012600035::1685563785::0::1::::<><>::uid://c5u26pjvbm5hi<>uid://bero84or4iii5<>uid://bj75438if28g8<>uid://bi7p60d8y2nu<>uid://y6ve8g1upu3x<>res://Scripts/key.gd<>uid://dptnv1plk2br0<>uid://c7ongxj0tk638
+Level1.tscn::PackedScene::665282958012600035::1685877250::0::1::::<><>::uid://c5u26pjvbm5hi<>uid://bero84or4iii5<>uid://bj75438if28g8<>uid://bi7p60d8y2nu<>uid://y6ve8g1upu3x<>res://Scripts/key.gd<>uid://dptnv1plk2br0<>uid://c7ongxj0tk638
 Tube.tscn::PackedScene::8252146094848277495::1685388417::0::1::::<><>::uid://bd41bx1x7866u
 ::res://Object nodes/::1685197931
 cube_interactable.gd::GDScript::-1::1684847991::0::1::::<>Interactable<>::
 interact_generic.gd::GDScript::-1::1685197931::0::1::::Interactable<>Area3D<>::
 Level1.gd::GDScript::-1::1684847991::0::1::::<>Node<>::
-::res://Player/::1685563959
+::res://Player/::1685877251
 Health.gd::GDScript::-1::1685393311::0::1::::<>Node3D<>::
 Player.gd::GDScript::-1::1685450196::0::1::::<>CharacterBody3D<>::
-Player.tscn::PackedScene::6921489752733594174::1685563959::0::1::::<><>::res://Player/Player.gd<>uid://dxvkr1ki4m47q<>uid://c80sut7h6e034<>res://Player/Health.gd<>res://Player/WeaponManager.gd<>uid://bl2s0o5gvd2ky
+Player.tscn::PackedScene::6921489752733594174::1685877251::0::1::::<><>::res://Player/Player.gd<>uid://dxvkr1ki4m47q<>res://Player/Health.gd<>res://Player/WeaponManager.gd<>uid://bl2s0o5gvd2ky
 WeaponManager.gd::GDScript::-1::1685450569::0::1::::<>Node3D<>::
-::res://Props 2D/::1685271639
+::res://Props 2D/::1685947582
+circle32.png::CompressedTexture2D::4486868557973176510::1685947582::1685947589::1::::<><>::
 crosshair.png::CompressedTexture2D::8817596297471242484::1685271639::1685271639::1::::<><>::
-::res://Props 3D/::1685537188
+::res://Props 3D/::1685605110
 CEILING Not Broken.glb::PackedScene::6843228428643730707::1685382128::1685382131::1::::<><>::
 CEILING.glb::PackedScene::2658435846371844246::1685298657::1685298660::1::::<><>::
 Door.glb::PackedScene::5711544234031146346::1684847991::1684847991::1::::<><>::
@@ -46,7 +48,7 @@ shotgun.glb::PackedScene::1500440944243447005::1685450536::1685450536::1::::<><>
 shotgun_blackmetal.png::CompressedTexture2D::9207414521617560341::1685450536::1685450538::1::::<><>::
 shotgun_shinymetal.png::CompressedTexture2D::9111813812896544525::1685450536::1685450538::1::::<><>::
 shotgun_wood.png::CompressedTexture2D::7713807181195083823::1685450536::1685450538::1::::<><>::
-::res://Props 3D/Weapons/Blader/::1685563959
+::res://Props 3D/Weapons/Blader/::1685563963
 blader-col_(117660794).png::CompressedTexture2D::2819231087810614412::1685563232::1685563290::1::::<><>::
 blader-col_(117660794)_8.png::CompressedTexture2D::976289260464373503::1685563232::1685563290::1::::<><>::
 blader-col_(719839572).png::CompressedTexture2D::7096620050471625376::1685563232::1685563290::1::::<><>::
@@ -63,21 +65,21 @@ blader-col_bump_6.png::CompressedTexture2D::8945707735344887331::1685563232::168
 blader-col_bump_9.png::CompressedTexture2D::1430073204457799907::1685563232::1685563290::1::::<><>::
 blader-col_bump_12.png::CompressedTexture2D::2397824233211149995::1685563232::1685563290::1::::<><>::
 blader.glb::PackedScene::7141812320777714985::1685563232::1685563963::1::::<><>::uid://bfyqnq1lpjagr<>uid://cjxhvsr6jegx3<>uid://ju6io06px10v<>uid://nduooui15fej<>uid://dr8vvx2xy8uwv<>uid://c5ndghn7x7ncj<>uid://ce8o4uu1eiebl<>uid://ce67mhhiypemy<>uid://bx73vv3xtargj<>uid://hra5as7yeme3<>uid://c3ikgrfqnbnaj<>uid://d1ugy34k6mt6h<>uid://bgabki1bhe4hv<>uid://blmj5lbo3dxx<>uid://b18a35r0tpclt
-blader_bump.png::CompressedTexture2D::9025868217709064385::1685563959::1685563963::1::::<><>::
-blader_(719839572).png::CompressedTexture2D::526469930395046132::1685563960::1685563963::1::::<><>::
-blader_(719839572)_2.png::CompressedTexture2D::6755262797340049109::1685563960::1685563963::1::::<><>::
-blader_bump_3.png::CompressedTexture2D::674884436326977047::1685563960::1685563963::1::::<><>::
-blader_(1861475863).png::CompressedTexture2D::2787905536244430453::1685563960::1685563963::1::::<><>::
-blader_(1861475863)_5.png::CompressedTexture2D::5452485142195904274::1685563960::1685563963::1::::<><>::
-blader_bump_6.png::CompressedTexture2D::4279506689519300377::1685563961::1685563963::1::::<><>::
 blader_(117660794).png::CompressedTexture2D::2807632780859807527::1685563961::1685563963::1::::<><>::
 blader_(117660794)_8.png::CompressedTexture2D::93643267749633361::1685563961::1685563963::1::::<><>::
-blader_bump_9.png::CompressedTexture2D::6905536842303530033::1685563961::1685563963::1::::<><>::
+blader_(719839572).png::CompressedTexture2D::526469930395046132::1685563960::1685563963::1::::<><>::
+blader_(719839572)_2.png::CompressedTexture2D::6755262797340049109::1685563960::1685563963::1::::<><>::
 blader_(996647308).png::CompressedTexture2D::919888208149001653::1685563961::1685563963::1::::<><>::
 blader_(996647308)_11.png::CompressedTexture2D::8421910668155105145::1685563962::1685563963::1::::<><>::
-blader_bump_12.png::CompressedTexture2D::4068562900282524201::1685563962::1685563963::1::::<><>::
+blader_(1861475863).png::CompressedTexture2D::2787905536244430453::1685563960::1685563963::1::::<><>::
+blader_(1861475863)_5.png::CompressedTexture2D::5452485142195904274::1685563960::1685563963::1::::<><>::
 blader_(3978003352).png::CompressedTexture2D::5122624116294353405::1685563962::1685563963::1::::<><>::
 blader_(3978003352)_14.png::CompressedTexture2D::5119557204482802296::1685563962::1685563963::1::::<><>::
+blader_bump.png::CompressedTexture2D::9025868217709064385::1685563959::1685563963::1::::<><>::
+blader_bump_3.png::CompressedTexture2D::674884436326977047::1685563960::1685563963::1::::<><>::
+blader_bump_6.png::CompressedTexture2D::4279506689519300377::1685563961::1685563963::1::::<><>::
+blader_bump_9.png::CompressedTexture2D::6905536842303530033::1685563961::1685563963::1::::<><>::
+blader_bump_12.png::CompressedTexture2D::4068562900282524201::1685563962::1685563963::1::::<><>::
 ::res://Scripts/::1685031717
 Door1.gd::GDScript::-1::1685031717::0::1::::<>Interactable<>::
 key.gd::GDScript::-1::1685031177::0::1::::<>Interactable<>::
