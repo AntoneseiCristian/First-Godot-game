@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0xfm4oyiqqna"]
+
+[ext_resource type="Script" path="res://HitScanBulletEmitter.gd" id="1_j7o1s"]
+
+[node name="HitScanBulletEmitter" type="Node3D"]
+script = ExtResource("1_j7o1s")

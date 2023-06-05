@@ -111,6 +111,11 @@ slot8={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_2="chratacters"
+3d_physics/layer_3="hitboxes"
+
 [rendering]
 
 renderer/rendering_method="mobile"

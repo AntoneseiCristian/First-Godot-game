@@ -1,18 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://drdnga4sdekbf"]
+[gd_scene load_steps=9 format=3 uid="uid://drdnga4sdekbf"]
 
 [ext_resource type="Texture2D" uid="uid://b46qcmp7rhns5" path="res://Props 2D/circle32.png" id="1_jwiax"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxh2c"]
+depth_draw_mode = 2
+no_depth_test = true
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.733333, 0.0784314, 0.172549, 1)
+albedo_texture = ExtResource("1_jwiax")
+texture_filter = 0
+texture_repeat = false
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_point_size = true
+point_size = 3.5
+
+[sub_resource type="Curve" id="Curve_ua2f5"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.519836, 1), 0.0, 0.0, 0, 0, Vector2(0.803205, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_wj5b8"]
+curve = SubResource("Curve_ua2f5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_unhno"]
+lifetime_randomness = 0.4
+emission_shape = 4
+emission_point_count = 1
+spread = 106.48
+initial_velocity_min = 6.0
+initial_velocity_max = 6.0
+scale_min = 716.56
+scale_max = 726.87
+scale_curve = SubResource("CurveTexture_wj5b8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_l5ijs"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ptec0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fres"]
 transparency = 1
+albedo_color = Color(0.192157, 0.258824, 0.247059, 1)
 albedo_texture = ExtResource("1_jwiax")
 
 [node name="BulletHitEffect" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0099411, 0.16004, -0.0704575)
+material_override = SubResource("StandardMaterial3D_mxh2c")
+gi_mode = 0
+explosiveness = 0.9
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_unhno")
+draw_pass_1 = SubResource("QuadMesh_l5ijs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 0.005, 0)
+[node name="BulletDecal" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0.005, 0)
 mesh = SubResource("QuadMesh_ptec0")
 surface_material_override/0 = SubResource("StandardMaterial3D_6fres")

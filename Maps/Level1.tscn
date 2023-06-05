@@ -70,7 +70,6 @@ shape = SubResource("BoxShape3D_nkh0c")
 transform = Transform3D(-0.00372276, 0.00115868, -0.999992, 0.00123305, 0.999999, 0.00115409, 0.999992, -0.00122874, -0.00372422, -1.26623, 0.0315366, -22.2933)
 isLocked = true
 keyPath = NodePath("../Key")
-type = "Door"
 
 [node name="FirstRoom-col" type="MeshInstance3D" parent="NavigationRegion3D/Environment Level 1" groups=["WoodTerrain"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.55759, 0, -24.3586)

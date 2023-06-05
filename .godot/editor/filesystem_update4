@@ -1,3 +1,8 @@
 res://Maps/Level1.tscn
 res://Player/Player.tscn
 res://bullet_hit_effect.tscn
+res://hit_scan_bullet_emitter.tscn
+res://Maps/key.tscn
+res://Scripts/Door1.gd
+res://Maps/Door1.tscn
+res://Player/Player.gd
