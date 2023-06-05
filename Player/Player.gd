@@ -141,7 +141,12 @@ func _procesare_miscare(delta):
 	direction.x = -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
 	direction.z = -Input.get_action_strength("ui_up") + Input.get_action_strength("ui_down")
 	direction = Vector3(direction.x, 0, direction.z).rotated(Vector3.UP, h_rot).normalized()
-	var actualSpeed = speed if !isRunning else speed*2.5
+	var actualSpeed
+
+	if isRunning:
+		actualSpeed = speed * 2.5
+	else:
+		actualSpeed = speed
 	
 	velocity.x = direction.x * actualSpeed
 	velocity.z = direction.z * actualSpeed
