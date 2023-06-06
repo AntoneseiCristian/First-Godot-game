@@ -1,8 +1,9 @@
-res://Maps/Level1.tscn
-res://shotgun.gd
 res://Player/Player.tscn
+res://shotgun.gd
+res://Maps/Level1.tscn
 res://int.tscn
 res://Maps/door.tscn
 res://Maps/Door1.tscn
 res://Decal/decal.tscn
 res://shotgun.tscn
+res://Props 3D/Weapons/Blader/blader.tscn
