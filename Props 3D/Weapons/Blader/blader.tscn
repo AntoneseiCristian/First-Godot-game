@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://daj4r1xfqelby"]
+
+[ext_resource type="PackedScene" uid="uid://c80sut7h6e034" path="res://Props 3D/Weapons/Blader/blader.glb" id="1_f4gvs"]
+
+[node name="blader" instance=ExtResource("1_f4gvs")]

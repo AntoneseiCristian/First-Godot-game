@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5u26pjvbm5hi"]
+[gd_scene load_steps=16 format=3 uid="uid://c5u26pjvbm5hi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7fv8r"]
 [ext_resource type="Texture2D" uid="uid://dxvkr1ki4m47q" path="res://Props 2D/crosshair.png" id="2_ls1wl"]
 [ext_resource type="Script" path="res://Player/Health.gd" id="3_n75f1"]
 [ext_resource type="Script" path="res://shotgun.gd" id="4_iv850"]
 [ext_resource type="Script" path="res://Player/WeaponManager.gd" id="4_puvee"]
+[ext_resource type="PackedScene" uid="uid://daj4r1xfqelby" path="res://Props 3D/Weapons/Blader/blader.tscn" id="5_akau1"]
 [ext_resource type="PackedScene" uid="uid://bl2s0o5gvd2ky" path="res://shotgun.tscn" id="6_i6cax"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gakgu"]
@@ -14,7 +15,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun:position")
+tracks/0/path = NodePath("MACHINE_GUN:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +27,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun:rotation")
+tracks/1/path = NodePath("MACHINE_GUN:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -41,7 +42,7 @@ resource_name = "attack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun:position")
+tracks/0/path = NodePath("MACHINE_GUN:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -53,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("gun:rotation")
+tracks/1/path = NodePath("MACHINE_GUN:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -69,15 +70,14 @@ loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_c7fgf"]
 resource_name = "reload"
-length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("gun:rotation")
+tracks/0/path = NodePath("MACHINE_GUN:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6),
+"times": PackedFloat32Array(0.3, 0.5, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.214676, -0.00872665, 0.0453786), Vector3(-0.214676, -0.00872665, 0.987856), Vector3(-0.214676, -0.00872665, 0.0453786)]
@@ -120,29 +120,32 @@ script = ExtResource("4_puvee")
 
 [node name="Weapons" type="Node3D" parent="Camera3D/WeaponManager"]
 
+[node name="blader" parent="Camera3D/WeaponManager/Weapons" instance=ExtResource("5_akau1")]
+transform = Transform3D(1, 0, 0, 0, -0.757098, 0.653302, 0, -0.653302, -0.757098, 0, -0.543318, -0.123289)
+visible = false
+
 [node name="Gun" type="Node3D" parent="Camera3D/WeaponManager/Weapons"]
 transform = Transform3D(0.195056, -0.0123485, 0.0424351, 0.0258523, 0.187633, -0.0642314, -0.0358453, 0.0681288, 0.18459, 0.0702229, -0.162919, -0.0234192)
+
+[node name="GunRay" type="RayCast3D" parent="Camera3D/WeaponManager/Weapons/Gun"]
+transform = Transform3D(0.981124, 0.0605446, -0.183654, -0.00400731, 0.955885, 0.293713, 0.193335, -0.287434, 0.938085, 0, 0, 0)
+target_position = Vector3(0, 0, -1000)
 
 [node name="Graphics" type="Node3D" parent="Camera3D/WeaponManager/Weapons/Gun"]
 transform = Transform3D(1, 1.49012e-08, -1.49012e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="gun" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics" instance=ExtResource("6_i6cax")]
+[node name="MACHINE_GUN" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics" instance=ExtResource("6_i6cax")]
 transform = Transform3D(0.998842, -0.0473737, -0.00846013, 0.0445162, 0.976364, -0.211499, 0.0182797, 0.210878, 0.977341, 0, 0, 0)
 script = ExtResource("4_iv850")
-damage = 7
+damage = 10
 ammo = 10
 max_ammo = 10
 spare_ammo = 555
 ammo_per_shot = 1
-full_auto = true
 reload_time = 1.0
 firerate = 0.2
-rayCast = NodePath("GunRay")
-RAYCONTAINER = NodePath("GunRay")
-
-[node name="GunRay" type="RayCast3D" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics/gun"]
-transform = Transform3D(0.989309, 0.085559, -0.118095, -0.0505956, 0.960882, 0.2723, 0.136773, -0.263414, 0.954938, 0, 0, 0)
-target_position = Vector3(0, 0, -1000)
+rayCast = NodePath("../../GunRay")
+RAYCONTAINER = NodePath("../../GunRay")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/WeaponManager/Weapons/Gun/Graphics"]
 autoplay = "idle"
