@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0xfm4oyiqqna"]
+[gd_scene load_steps=2 format=3 uid="uid://blbuqwb6n5ep1"]
 
-[ext_resource type="Script" path="res://HitScanBulletEmitter.gd" id="1_j7o1s"]
+[ext_resource type="Script" path="res://Sounds/HitScanBulletEmitter.gd" id="1_h8pt1"]
 
 [node name="HitScanBulletEmitter" type="Node3D"]
-script = ExtResource("1_j7o1s")
+script = ExtResource("1_h8pt1")
+distance = 9890

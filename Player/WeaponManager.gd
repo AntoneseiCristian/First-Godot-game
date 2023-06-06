@@ -47,3 +47,6 @@ func disable_all_weapons():
 		else:
 			weapon.hide()
 		
+func shoot_projectile():
+	if cur_weapon != null and cur_weapon.has_method("shoot"):
+		cur_weapon.shoot()

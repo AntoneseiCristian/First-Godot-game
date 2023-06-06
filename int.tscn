@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bogfvqws1p06n"]
+
+[ext_resource type="Script" path="res://ENEMY.gd" id="1_4dfar"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i86cs"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f1sm7"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="RigidBody3D" type="RigidBody3D" groups=["enemy"]]
+script = ExtResource("1_4dfar")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_i86cs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_f1sm7")
