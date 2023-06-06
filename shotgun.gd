@@ -103,11 +103,11 @@ func shotgun_fire(delta):
 	ammo -= ammo_per_shot
 	for r in raycontainer.get_children():
 		
-	#	r.target_position.x = randf_range(spread,-spread)
-	#	r.target_position.y = randf_range(spread,-spread)
+		r.target_position.x = randf_range(spread,-spread)
+		r.target_position.y = randf_range(spread,-spread)
 		
-	#	r.rotation_degrees.x = rad_to_deg(randf_range(shotgun_spread, -shotgun_spread))
-	#	r.rotation_degrees.y = rad_to_deg(randf_range(shotgun_spread, -shotgun_spread))
+		r.rotation_degrees.x = rad_to_deg(randf_range(shotgun_spread, -shotgun_spread))
+		r.rotation_degrees.y = rad_to_deg(randf_range(shotgun_spread, -shotgun_spread))
 		
 		await get_tree().create_timer(0.01).timeout
 		
@@ -162,9 +162,9 @@ func recoil_func(delta):
 		# Add the vertical recoil to the vertical_recoil variable and multiply by delta
 		vertical_recoil += recoil * delta
 		# Update the rotation of the head object using the lerpf function
-	#	head.rotation.x = lerpf(head.rotation.x,deg_to_rad(head.rotation_degrees.x + vertical_recoil ),delta)
+		head.rotation.x = lerpf(head.rotation.x,deg_to_rad(head.rotation_degrees.x + vertical_recoil ),delta)
 		# Update the rotation of the camera object using the lerpf function
-	#	camera.rotation.y = lerpf(camera.rotation.y,deg_to_rad(horizontal_recoil),5 * delta)
+		camera.rotation.y = lerpf(camera.rotation.y,deg_to_rad(horizontal_recoil),5 * delta)
 		# Clamp the vertical recoil to a maximum value of 80
 		vertical_recoil = min(80,80)
 		# Check if the variable can_fire is still True
@@ -172,8 +172,8 @@ func recoil_func(delta):
 		# Set the vertical recoil to 80
 		vertical_recoil = 80
 		# Clamp the rotation of the head object between -80 and 80 degrees
-	#	head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
+		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -80, 80)
 		# If the rotation of the head object is greater than or equal to 80 degrees
-	#	if head.rotation_degrees.x >= 80:
+		if head.rotation_degrees.x >= 80:
 		# Lerp the rotation of the head object towards 30 degrees
-	#		head.rotation_degrees.x = lerpf(head.rotation_degrees.x ,30, 5 * delta)
+			head.rotation_degrees.x = lerpf(head.rotation_degrees.x ,30, 5 * delta)
