@@ -1,33 +1,33 @@
 2a60927148abd1d33b818b535e306557
-::res://::1686053012
-bullet_hit_effect.tscn::PackedScene::8359465607478769951::1686036919::0::1::::<><>::uid://b46qcmp7rhns5
+::res://::1686067806
+bullet_hit_effect.tscn::PackedScene::-1::1686067762::0::1::::<><>::
 ENEMY.gd::GDScript::-1::1686040649::0::1::::<>RigidBody3D<>::
-hit_scan_bullet_emitter.tscn::PackedScene::3161806412508887048::1686036919::0::1::::<><>::res://Sounds/HitScanBulletEmitter.gd
+hit_scan_bullet_emitter.tscn::PackedScene::-1::1686067762::0::1::::<><>::
 hud.tscn::PackedScene::6458173398040185060::1686048987::0::1::::<><>::
 icon.svg::CompressedTexture2D::2792527524694769030::1684847992::1684847992::1::::<><>::
-int.tscn::PackedScene::3381792722998249575::1686052726::0::1::::<><>::res://ENEMY.gd
-shotgun.gd::GDScript::-1::1686052280::0::1::::<>Node3D<>::
-shotgun.tscn::PackedScene::3215374495760349568::1686052726::0::1::::<><>::uid://vm3bp4mhnlmb
-::res://Decal/::1686052726
+int.tscn::PackedScene::3381792722998249575::1686067436::0::1::::<><>::res://ENEMY.gd
+shotgun.gd::GDScript::-1::1686067764::0::1::::<>Node3D<>::
+shotgun.tscn::PackedScene::3215374495760349568::1686067437::0::1::::<><>::uid://vm3bp4mhnlmb
+::res://Decal/::1686067437
 Bullet decal.png::CompressedTexture2D::8095329177882536798::1686048886::1686048908::1::::<><>::
-decal.tscn::PackedScene::4384794623480604133::1686052726::0::1::::<><>::uid://dnlo5hqcujed7
-::res://Maps/::1686052726
+decal.tscn::PackedScene::4384794623480604133::1686067437::0::1::::<><>::uid://dnlo5hqcujed7
+::res://Maps/::1686067762
 ceiling_not_broken.tscn::PackedScene::7048586911131467573::1685388417::0::1::::<><>::uid://c4q58cdwujdwt
-cube_interactable.tscn::PackedScene::2701101122775330204::1685382612::0::1::::<><>::uid://dka2qmpmugwu1<>res://Maps/cube_interactable.gd
-Door1.tscn::PackedScene::3086055184375155673::1686052726::0::1::::<><>::uid://dka2qmpmugwu1<>res://Scripts/Door1.gd<>uid://dou3b1vd07hgh<>uid://cv7ine0l7vuyp
-door.tscn::PackedScene::6181790591584454578::1686052726::0::1::::<><>::uid://cnmykfyst2n03
-interract_generic.tscn::PackedScene::7862819072991281610::1685388416::0::1::::<><>::res://Object nodes/interact_generic.gd
+cube_interactable.tscn::PackedScene::-1::1686067762::0::1::::<><>::
+Door1.tscn::PackedScene::3086055184375155673::1686067762::0::1::::<><>::uid://dka2qmpmugwu1<>res://Scripts/Door1.gd<>uid://dou3b1vd07hgh<>uid://cv7ine0l7vuyp
+door.tscn::PackedScene::6181790591584454578::1686067436::0::1::::<><>::uid://cnmykfyst2n03
+interract_generic.tscn::PackedScene::-1::1686067762::0::1::::<><>::
 key.tscn::PackedScene::1749811901460388247::1686036983::0::1::::<><>::
-Level1.tscn::PackedScene::665282958012600035::1686052726::0::1::::<><>::uid://c5u26pjvbm5hi<>uid://bero84or4iii5<>uid://bj75438if28g8<>uid://bi7p60d8y2nu<>uid://y6ve8g1upu3x<>res://Scripts/key.gd<>uid://dptnv1plk2br0<>uid://c7ongxj0tk638<>uid://bogfvqws1p06n
+Level1.tscn::PackedScene::665282958012600035::1686067436::0::1::::<><>::uid://c5u26pjvbm5hi<>uid://bero84or4iii5<>uid://bj75438if28g8<>uid://bi7p60d8y2nu<>uid://y6ve8g1upu3x<>res://Scripts/key.gd<>uid://dptnv1plk2br0<>uid://c7ongxj0tk638<>uid://bogfvqws1p06n
 Tube.tscn::PackedScene::8252146094848277495::1685388417::0::1::::<><>::uid://bd41bx1x7866u
-::res://Object nodes/::1686040779
-interact_generic.gd::GDScript::-1::1685197931::0::1::::Interactable<>Area3D<>::
+::res://Object nodes/::1686067762
+interact_generic.gd::GDScript::-1::1686067762::0::1::::Interactable<>Area3D<>::
 Level1.gd::GDScript::-1::1684847991::0::1::::<>Node<>::
-::res://Player/::1686052726
+::res://Player/::1686067764
 Health.gd::GDScript::-1::1686035835::0::1::::<>Node3D<>::
-Player.gd::GDScript::-1::1685999024::0::1::::<>CharacterBody3D<>::
-Player.tscn::PackedScene::6921489752733594174::1686052726::0::1::::<><>::res://Player/Player.gd<>uid://dxvkr1ki4m47q<>res://Player/Health.gd<>res://shotgun.gd<>res://Player/WeaponManager.gd<>uid://c80sut7h6e034<>uid://bl2s0o5gvd2ky
-WeaponManager.gd::GDScript::-1::1686037562::0::1::::<>Node3D<>::
+Player.gd::GDScript::-1::1686066999::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::6921489752733594174::1686067764::0::1::::<><>::res://Player/Player.gd<>uid://dxvkr1ki4m47q<>res://Player/Health.gd<>res://shotgun.gd<>res://Player/WeaponManager.gd<>uid://daj4r1xfqelby<>uid://bl2s0o5gvd2ky
+WeaponManager.gd::GDScript::-1::1686067762::0::1::::<>Node3D<>::
 ::res://Props 2D/::1685947589
 circle32.png::CompressedTexture2D::4486868557973176510::1685947582::1685947589::1::::<><>::
 crosshair.png::CompressedTexture2D::8817596297471242484::1685271639::1685271639::1::::<><>::
@@ -40,7 +40,7 @@ Scaun.glb::PackedScene::2703180994777734782::1684848849::1684848855::1::::<><>::
 Scaun_Image_1.png::CompressedTexture2D::5380865611224971709::1684847991::1684847991::1::::<><>::
 Scaun_Image_2-Image_0.png::CompressedTexture2D::4103976801761811723::1684847991::1684847991::1::::<><>::
 Scaun_Image_3.png::CompressedTexture2D::828429452110247442::1684847991::1684847991::1::::<><>::
-::res://Props 3D/Weapons/::1686053234
+::res://Props 3D/Weapons/::1686067764
 greenmetal.png::CompressedTexture2D::897814092230947913::1685450536::1685450536::1::::<><>::
 machete.glb::PackedScene::6513208794909043111::1685450536::1685450537::1::::<><>::uid://dgjt0rfuy7s13<>uid://c8quff7wqg6i4
 machete_blackmetal.png::CompressedTexture2D::7600173681967255192::1685450537::1685450538::1::::<><>::
@@ -53,7 +53,7 @@ shotgun.glb::PackedScene::1500440944243447005::1685450536::1685450536::1::::<><>
 shotgun_blackmetal.png::CompressedTexture2D::9207414521617560341::1685450536::1685450538::1::::<><>::
 shotgun_shinymetal.png::CompressedTexture2D::9111813812896544525::1685450536::1685450538::1::::<><>::
 shotgun_wood.png::CompressedTexture2D::7713807181195083823::1685450536::1685450538::1::::<><>::
-::res://Props 3D/Weapons/Blader/::1686052985
+::res://Props 3D/Weapons/Blader/::1686067777
 blader-col_(117660794).png::CompressedTexture2D::2819231087810614412::1685563232::1685563290::1::::<><>::
 blader-col_(117660794)_8.png::CompressedTexture2D::976289260464373503::1685563232::1685563290::1::::<><>::
 blader-col_(719839572).png::CompressedTexture2D::7096620050471625376::1685563232::1685563290::1::::<><>::
@@ -69,7 +69,8 @@ blader-col_bump_3.png::CompressedTexture2D::2708998355233102529::1685563232::168
 blader-col_bump_6.png::CompressedTexture2D::8945707735344887331::1685563232::1685563290::1::::<><>::
 blader-col_bump_9.png::CompressedTexture2D::1430073204457799907::1685563232::1685563290::1::::<><>::
 blader-col_bump_12.png::CompressedTexture2D::2397824233211149995::1685563232::1685563290::1::::<><>::
-blader.glb::PackedScene::7141812320777714985::1686053244::1686053248::1::::<><>::uid://bfyqnq1lpjagr<>uid://cjxhvsr6jegx3<>uid://ju6io06px10v<>uid://nduooui15fej<>uid://dr8vvx2xy8uwv<>uid://c5ndghn7x7ncj<>uid://ce8o4uu1eiebl<>uid://ce67mhhiypemy<>uid://bx73vv3xtargj<>uid://hra5as7yeme3<>uid://c3ikgrfqnbnaj<>uid://d1ugy34k6mt6h<>uid://bgabki1bhe4hv<>uid://blmj5lbo3dxx<>uid://b18a35r0tpclt
+blader.glb::PackedScene::7141812320777714985::1686067764::1686067777::1::::<><>::uid://bfyqnq1lpjagr<>uid://cjxhvsr6jegx3<>uid://ju6io06px10v<>uid://nduooui15fej<>uid://dr8vvx2xy8uwv<>uid://c5ndghn7x7ncj<>uid://ce8o4uu1eiebl<>uid://ce67mhhiypemy<>uid://bx73vv3xtargj<>uid://hra5as7yeme3<>uid://c3ikgrfqnbnaj<>uid://d1ugy34k6mt6h<>uid://bgabki1bhe4hv<>uid://blmj5lbo3dxx<>uid://b18a35r0tpclt
+blader.tscn::PackedScene::7179634003538785638::1686067764::0::1::::<><>::uid://c80sut7h6e034
 blader_(117660794).png::CompressedTexture2D::2807632780859807527::1685563961::1685563963::1::::<><>::
 blader_(117660794)_8.png::CompressedTexture2D::93643267749633361::1685563961::1685563963::1::::<><>::
 blader_(719839572).png::CompressedTexture2D::526469930395046132::1685563960::1685563963::1::::<><>::
@@ -88,7 +89,7 @@ blader_bump_12.png::CompressedTexture2D::4068562900282524201::1685563962::168556
 ::res://Scripts/::1686048003
 Door1.gd::GDScript::-1::1686048003::0::1::::<>Interactable<>::
 key.gd::GDScript::-1::1685031177::0::1::::<>Interactable<>::
-::res://Sounds/::1686035835
+::res://Sounds/::1686067762
 beltHandle1.ogg::AudioStreamOggVorbis::329346491078975538::1685023037::1685023038::1::::<><>::
 beltHandle2.ogg::AudioStreamOggVorbis::6298545848318726324::1685023037::1685023038::1::::<><>::
 bookClose.ogg::AudioStreamOggVorbis::2015415871677305920::1685023037::1685023037::1::::<><>::
@@ -134,7 +135,7 @@ handleCoins2.ogg::AudioStreamOggVorbis::1176272847749245252::1685023037::1685023
 handleCoins.ogg::AudioStreamOggVorbis::1109760061174588752::1685023037::1685023037::1::::<><>::
 handleSmallLeather2.ogg::AudioStreamOggVorbis::2669896632787832924::1685023037::1685023037::1::::<><>::
 handleSmallLeather.ogg::AudioStreamOggVorbis::8127296962286735526::1685023037::1685023038::1::::<><>::
-HitScanBulletEmitter.gd::GDScript::-1::1686035835::0::1::::<>Node3D<>::
+HitScanBulletEmitter.gd::GDScript::-1::1686067762::0::1::::<>Node3D<>::
 knifeSlice2.ogg::AudioStreamOggVorbis::4809196311452184754::1685023037::1685023038::1::::<><>::
 knifeSlice.ogg::AudioStreamOggVorbis::7279105505106961306::1685023037::1685023038::1::::<><>::
 metalClick.ogg::AudioStreamOggVorbis::5452353993488078289::1685023037::1685023038::1::::<><>::
