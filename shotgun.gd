@@ -1,5 +1,10 @@
 extends Node3D
 
+
+const ADS_LERP = 13
+@export var default_position : Vector3
+@export var ads_position : Vector3
+
 @export var damage: int
 @export var ammo: int
 @export var max_ammo: int
@@ -11,6 +16,10 @@ extends Node3D
 var vertical_recoil : int = 0
 @export var rayCast: NodePath
 @onready var raycast = get_node(rayCast)
+@export var shotgun : bool
+
+@export var RAYCONTAINER: NodePath
+@onready var raycontainer = get_node(RAYCONTAINER)
 
 var can_fire = true
 var reloading = false
@@ -19,46 +28,121 @@ var reloading = false
 # NOTE THE OUR WEAPON SHOULD BE CHILD OF CAMERA. CAMERA IS USED FOR SIDE_RECOIL.
 @onready var camera = $"../../../../.."
 
-#@onready var ammo_counter = $HUD/count
+@onready var ammo_counter = $"../../../../../../HUD/Label"
+@onready var DECAL = preload("res://Decal/decal.tscn")
+
+const shotgun_spread : float = 0.05
+const spread : int = 50
 
 func _ready(): 
 	randomize()
 
 func _process(delta):
-#	if reloading:
-#		ammo_counter.set_text(" RELOADING... ")
-#	else:
-#		#ammo_counter.set_text("   %d - %d " % [ammo, spare_ammo])
-#		ammo_counter.set_text(" cate gloante am")
+	ADS(delta)
+	if reloading:
+		ammo_counter.set_text(" RELOADING... ")
+	else:
+		ammo_counter.set_text("   %d - %d " % [ammo, spare_ammo])
 	if ammo <= 0:
 		can_fire = false
 	if Input.is_action_just_pressed("R") and not reloading and ammo < max_ammo:
 		reload()
 	if Input.is_action_pressed("fire") and can_fire and full_auto:
-		fire(delta)
-		if not reloading and ammo <= 0: 
-			reload()
+		if shotgun == false:
+			fire(delta)
+			if ammo > 0 and not reloading:
+				pass
+			elif not reloading:
+				reload()
+		else:
+			shotgun_fire(delta)
+			if ammo > 0 and not reloading:
+				pass
+			elif not reloading:
+				pass
 	elif Input.is_action_just_pressed("fire") and can_fire and not full_auto:
-		fire(delta)
-		if not reloading and ammo <= 0: 
-			reload()
+		if shotgun == false:
+			fire(delta)
+			if ammo > 0 and not reloading:
+				pass
+			elif not reloading:
+				reload()
+		else:
+			shotgun_fire(delta)
+			if ammo > 0 and not reloading:
+				pass
+			elif not reloading:
+				pass
+
 
 
 func fire(delta):
-	force()
 	recoil_func(delta)
 	can_fire = false
 	ammo -= ammo_per_shot
 	if raycast.get_collider() != null and raycast.get_collider().is_in_group("enemy"):
 		raycast.get_collider().hp -= damage
+	if  $"../AnimationPlayer"!= null:
+		$"../AnimationPlayer".stop(true)
+		$"../AnimationPlayer".play("attack")
 	await get_tree().create_timer(firerate).timeout
+	if raycast.is_colliding():
+		var col_point = raycast.get_collision_point()
+		var D = DECAL.instantiate()
+		get_tree().get_root().add_child(D)
+		D.global_transform.origin = col_point
+		var t = get_tree().create_tween()
+		t.tween_interval(1)
+		t.tween_callback(func():D.free())
 	if not reloading:
 		can_fire = true
 
 
+func shotgun_fire(delta):
+	can_fire = false
+	ammo -= ammo_per_shot
+	for r in raycontainer.get_children():
+		
+		r.target_position.x = randf_range(spread,-spread)
+		r.target_position.y = randf_range(spread,-spread)
+		
+		r.rotation_degrees.x = rad_to_deg(randf_range(shotgun_spread, -shotgun_spread))
+		r.rotation_degrees.y = rad_to_deg(randf_range(shotgun_spread, -shotgun_spread))
+		
+		await get_tree().create_timer(0.01).timeout
+		
+		r.rotation_degrees.x = 0
+		r.rotation_degrees.y = 0
+		
+		if r.get_collider() != null && r.get_collider().is_in_group("enemy"):
+			r.get_collider().hp -= damage
+		
+		if r.is_colliding():
+			var col_point = r.get_collision_point()
+			var D = DECAL.instantiate()
+			get_tree().get_root().add_child(D)
+			D.global_transform.origin = col_point
+			var t = get_tree().create_tween()
+			t.tween_interval(1)
+			t.tween_callback(func():D.free())
+			
+	if $"../AnimationPlayer" != null:
+		$"../AnimationPlayer".stop(true)
+		$"../AnimationPlayer".play("attack")
+		await get_tree().create_timer(firerate).timeout
+	if reloading == false:
+		can_fire = true
+	recoil_func(delta)
+
+func ADS(delta):
+	if Input.is_action_pressed("ADS"):
+		transform.origin = transform.origin.lerp(ads_position, ADS_LERP * delta)
+	else:
+		transform.origin = transform.origin.lerp(default_position, ADS_LERP * delta)
 func reload():
 	reloading = true
 	can_fire = false
+	$"../AnimationPlayer".play("reload")
 	await get_tree().create_timer(reload_time).timeout
 	if reloading == true:
 		var ammo_to_add = min(max_ammo - ammo, spare_ammo)
@@ -93,11 +177,3 @@ func recoil_func(delta):
 		if head.rotation_degrees.x >= 80:
 		# Lerp the rotation of the head object towards 30 degrees
 			head.rotation_degrees.x = lerpf(head.rotation_degrees.x ,30, 5 * delta)
-
-func force():
-	if raycast.get_collider() != null && raycast.get_collider().is_in_group("enemy"):
-		var ray = raycast.get_collision_point()
-		var body = raycast.get_collider()
-		if body:
-			var direction = (ray - global_transform.origin).normalized()
-			body.apply_impulse(Vector3(direction.x, direction.y, direction.z) * 5)

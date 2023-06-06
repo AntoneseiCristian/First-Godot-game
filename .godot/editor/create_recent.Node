@@ -1,3 +1,5 @@
+Label
+Control
 MeshInstance3D
 RigidBody3D
 RayCast3D
@@ -9,9 +11,7 @@ CollisionShape3D
 NavigationRegion3D
 Node
 StaticBody3D
-Control
 CenterContainer
-Label
 Area3D
 CollisionPolygon3D
 Polygon2D

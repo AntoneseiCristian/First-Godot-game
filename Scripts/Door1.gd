@@ -36,8 +36,6 @@ func open():
 	animation_player.play("door_open")
 	isOpen = true
 	canInteract = false
-	
-	
 
 
 func _on_animation_player_animation_finished(anim_name):
